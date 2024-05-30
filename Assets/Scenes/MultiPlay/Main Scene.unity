@@ -4292,6 +4292,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gojung2
       objectReference: {fileID: 0}
+    - target: {fileID: 686315132702096984, guid: 92beda8839850db4582459d0307448d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8005293533498696857, guid: 92beda8839850db4582459d0307448d0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.989484
