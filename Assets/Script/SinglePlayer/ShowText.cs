@@ -7,27 +7,41 @@ using UnityEngine;
 class Chat
 {
     public int id;
-    public string text;
-    public float delaytime;
+    public string[] texts;
+    public float[] delaytimes;
 }
 
 public class ShowText : MonoBehaviour
 {
     public TMP_Text chatting;
     public GameObject ChatBox;
-    public string Text;
+    public TextAsset JsonFile;
     private List<Chat> chats;
     private int currentChatIndex = 0;
+    private int currentTextIndex = 0;
     private bool isTyping = false;
     private Coroutine typingCoroutine;
 
     void Start()
     {
         ChatBox.gameObject.SetActive(true);
-        var asset = Resources.Load<TextAsset>(Text);
-        var json = asset.text;
-        chats = JsonConvert.DeserializeObject<List<Chat>>(json);
-        DisplayCurrentChat();
+        if (JsonFile != null)
+        {
+            try
+            {
+                var json = JsonFile.text;
+                chats = JsonConvert.DeserializeObject<List<Chat>>(json);
+                DisplayCurrentChat();
+            }
+            catch (JsonReaderException e)
+            {
+                Debug.LogError("Failed to parse JSON: " + e.Message);
+            }
+        }
+        else
+        {
+            Debug.LogError("JsonFile is not assigned.");
+        }
     }
 
     void Update()
@@ -36,14 +50,18 @@ public class ShowText : MonoBehaviour
         {
             if (isTyping)
             {
-                // Stop the typing coroutine and display the full text immediately
                 StopCoroutine(typingCoroutine);
-                chatting.text = chats[currentChatIndex].text;
+                chatting.text = chats[currentChatIndex].texts[currentTextIndex];
                 isTyping = false;
             }
             else
             {
-                currentChatIndex++;
+                currentTextIndex++;
+                if (currentTextIndex >= chats[currentChatIndex].texts.Length)
+                {
+                    currentChatIndex++;
+                    currentTextIndex = 0;
+                }
                 DisplayCurrentChat();
             }
         }
@@ -53,7 +71,14 @@ public class ShowText : MonoBehaviour
     {
         if (currentChatIndex < chats.Count)
         {
-            typingCoroutine = StartCoroutine(Typing(chats[currentChatIndex].text, chats[currentChatIndex].delaytime));
+            if (currentTextIndex < chats[currentChatIndex].texts.Length)
+            {
+                typingCoroutine = StartCoroutine(Typing(chats[currentChatIndex].texts[currentTextIndex], chats[currentChatIndex].delaytimes[currentTextIndex]));
+            }
+            else
+            {
+                ChatBox.gameObject.SetActive(false);
+            }
         }
         else
         {
