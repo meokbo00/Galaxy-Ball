@@ -11,6 +11,7 @@ public class MultiStopButtonManager : MonoBehaviour
     public Button Xbtn;
     public Button Resume;
     public Button Restart;
+    public Button BacktoStage;
     public Button Main_menu;
 
     public GameObject Stop_Channel;
@@ -55,6 +56,16 @@ public class MultiStopButtonManager : MonoBehaviour
             ispause = false;
 
             SceneManager.LoadScene("Main Scene");
+        });
+        this.BacktoStage.onClick.AddListener(() =>
+        {
+            ButtonAudio.Play();
+            this.Stop_Channel.gameObject.SetActive(false);
+
+            Time.timeScale = 1;
+            ispause = false;
+
+            SceneManager.LoadScene("Stage");
         });
         this.Main_menu.onClick.AddListener(() =>
         {
