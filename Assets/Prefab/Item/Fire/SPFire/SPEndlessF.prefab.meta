@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefab/Item/Fire/SPFire/SPEndlessF.prefab.meta
 guid: c15a4f5e4ca659d4fbf917d1016fbafb
+========
+guid: 4f5375c5116d43f4f8e3577d13a33a97
+>>>>>>>> 5e6e4b05330cafcd378c1604490d45504521c066:Assets/Prefab/Item/Generate/Endless.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

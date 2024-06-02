@@ -15,7 +15,11 @@ GameObject:
   - component: {fileID: -1649662273827131956}
   m_Layer: 0
   m_Name: Turret
+<<<<<<< HEAD
   m_TagString: Item_Turret
+=======
+  m_TagString: Untagged
+>>>>>>> 5e6e4b05330cafcd378c1604490d45504521c066
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

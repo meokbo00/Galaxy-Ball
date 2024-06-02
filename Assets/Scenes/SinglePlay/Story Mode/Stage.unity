@@ -3477,6 +3477,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567017157}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
 --- !u!1 &1600905248
 GameObject:
   m_ObjectHideFlags: 0
@@ -3598,6 +3599,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600905248}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> 5e6e4b05330cafcd378c1604490d45504521c066
 --- !u!1 &1674690324
 GameObject:
   m_ObjectHideFlags: 0
@@ -3772,7 +3775,10 @@ RectTransform:
   - {fileID: 1555069170}
   - {fileID: 1066859268}
   - {fileID: 1567017158}
+<<<<<<< HEAD
   - {fileID: 1448208250}
+=======
+>>>>>>> 5e6e4b05330cafcd378c1604490d45504521c066
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

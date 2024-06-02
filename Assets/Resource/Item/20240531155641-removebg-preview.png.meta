@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Resource/Item/20240531155641-removebg-preview.png.meta
 guid: 7977586856b727f4e9d7dbbf18353da4
+========
+guid: 0cb434903800dc54fa900ff9d5ee8989
+>>>>>>>> 5e6e4b05330cafcd378c1604490d45504521c066:Assets/Resource/Item/20240531161254-removebg-preview.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
