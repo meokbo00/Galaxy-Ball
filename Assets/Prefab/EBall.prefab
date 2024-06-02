@@ -165,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   increase: 4
   hasExpanded: 0
+  fontsize: 4
   HitSound: {fileID: 4866244928444082244}
   SwellSound: {fileID: 5580464243157066455}
 --- !u!82 &4866244928444082244

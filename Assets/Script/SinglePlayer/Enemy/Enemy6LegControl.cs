@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Enemy6LegControl : MonoBehaviour
 {
-    public float moveSpeed = 1f;  // ÀÌµ¿ ¼Óµµ
-    public float rotationSpeed = 180f;  // È¸Àü ¼Óµµ
+    public float moveSpeed = 1f;  // ï¿½Ìµï¿½ ï¿½Óµï¿½
+    public float rotationSpeed = 180f;  // È¸ï¿½ï¿½ ï¿½Óµï¿½
     private TextMeshPro textMesh;
 
     private Transform parentTransform;
 
     private void Start()
     {
-        parentTransform = transform.parent;  // »óÀ§ ¿ÀºêÁ§Æ®ÀÇ TransformÀ» ÂüÁ¶
+        parentTransform = transform.parent;  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Transformï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         StartCoroutine(MoveAndRotate());
     }
 
@@ -21,7 +21,7 @@ public class Enemy6LegControl : MonoBehaviour
         while (true)
         {
             float targetAngle = Random.Range(-70f, 70f);
-            float currentAngle = parentTransform.eulerAngles.z;  // »óÀ§ ¿ÀºêÁ§Æ®ÀÇ ÇöÀç °¢µµ
+            float currentAngle = parentTransform.eulerAngles.z;  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             float rotationTime = Mathf.Abs(targetAngle - currentAngle) / rotationSpeed;
             float elapsedTime = 0f;
 
@@ -33,10 +33,10 @@ public class Enemy6LegControl : MonoBehaviour
                 yield return null;
             }
 
-            // ÀÌµ¿ÇÒ ¹æÇâ º¤ÅÍ °è»ê (¹Ù¶óº¸°í ÀÖ´Â ¹æÇâÀ¸·Î ÀÌµ¿)
-            Vector3 moveDirection = Random.Range(0, 2) == 0 ? -parentTransform.up : parentTransform.up;  // ºÎ¸ð ¿ÀºêÁ§Æ®ÀÇ À§ÂÊ ¹æÇâ ¶Ç´Â ¾Æ·¡ÂÊ ¹æÇâ Áß ·£´ýÀ¸·Î ¼±ÅÃ
+            // ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ (ï¿½Ù¶óº¸°ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½)
+            Vector3 moveDirection = Random.Range(0, 2) == 0 ? -parentTransform.up : parentTransform.up;  // ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½Æ·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-            // 1.5~2.5ÃÊ µ¿¾È ÀÌµ¿
+            // 1.5~2.5ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
             float moveTime = Random.Range(1.5f, 2.5f);
             elapsedTime = 0f;
 
@@ -47,7 +47,7 @@ public class Enemy6LegControl : MonoBehaviour
                 yield return null;
             }
 
-            // 1~5ÃÊ µ¿¾È Á¤Áö »óÅÂ·Î ´ë±â
+            // 1~5ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½
             float waitTime = Random.Range(2f, 3f);
             yield return new WaitForSeconds(waitTime);
         }
@@ -56,7 +56,8 @@ public class Enemy6LegControl : MonoBehaviour
     {
         Enemy6center enemy6Center = GetComponent<Enemy6center>();
 
-        if (collision.gameObject.tag == "P1ball" || collision.gameObject.tag == "P2ball" || collision.gameObject.tag == "P1Item" || collision.gameObject.tag == "P2Item")
+        if (collision.gameObject.tag == "P1ball" || collision.gameObject.tag == "P2ball" || collision.gameObject.tag == "P1Item" || collision.gameObject.tag == "P2Item" || 
+            (collision.gameObject.tag == "Item" && collision.gameObject.name != "SPEndlessF(Clone)"))
         {
             if (enemy6Center.randomNumber > 0)
             {
@@ -65,7 +66,7 @@ public class Enemy6LegControl : MonoBehaviour
             }
             if (enemy6Center.randomNumber <= 0)
             {
-                Destroy(transform.parent.gameObject); // ºÎ¸ð ¿ÀºêÁ§Æ® »èÁ¦
+                Destroy(transform.parent.gameObject); // ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
             }
         }
     }

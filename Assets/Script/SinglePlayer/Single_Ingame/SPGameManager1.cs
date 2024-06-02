@@ -28,12 +28,14 @@ public class SPGameManager : MonoBehaviour
         switch (icontag)
         {
             case "Item_BlackHole": fireitem = FireItemPrefab[0];break;
-            case "Item_Durability":fireitem = FireItemPrefab[1];break;
+            case "Item_Endless":fireitem = FireItemPrefab[1];break;
             case "Item_Fasten":fireitem = FireItemPrefab[2];break;
             case "Item_Force":fireitem = FireItemPrefab[3];break;
             case "Item_Invincible":fireitem = FireItemPrefab[4];break;
-            case "Item_Random_number":fireitem = FireItemPrefab[5];break;
-            case "Item_Reduction":fireitem = FireItemPrefab[6];break;
+            case "Item_Small":fireitem = FireItemPrefab[5];break;
+            case "Item_Turret": fireitem = FireItemPrefab[6]; break;
+            case "Item_Twice": fireitem = FireItemPrefab[7]; break;
+
         }
     }
     private void Update()

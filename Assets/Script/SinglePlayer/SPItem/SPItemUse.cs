@@ -9,9 +9,9 @@ public class SPItemUse : MonoBehaviour
         button.onClick.AddListener(() =>
         {
             string destroyedIconTag = gameObject.tag;
-            SPGameManager icontag = FindObjectOfType<SPGameManager>(); // ÀÓ½Ã·Î Àû¿ëÇÑ ÄÚµåÀÔ´Ï´Ù.
+            SPGameManager icontag = FindObjectOfType<SPGameManager>(); // ï¿½Ó½Ã·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½Ô´Ï´ï¿½.
             icontag.PrintDestroyedicontag(destroyedIconTag);
-            Debug.Log("¾ÆÀÌÅÛ " + destroyedIconTag + " À» Å¬¸¯Çß½À´Ï´Ù");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + destroyedIconTag + " ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½");
             Destroy(gameObject);
         });
     }

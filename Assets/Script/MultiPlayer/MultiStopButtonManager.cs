@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-//¸ÖÆ¼ÇÃ·¹ÀÌ¿¡ ÀÖ´Â ÀÏ½ÃÁßÁö ¹öÆ°±â´ÉÀ» ´ã´çÇÏ´Â ½ºÅ©¸³Æ®ÀÔ´Ï´Ù
+//ï¿½ï¿½Æ¼ï¿½Ã·ï¿½ï¿½Ì¿ï¿½ ï¿½Ö´ï¿½ ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½Ô´Ï´ï¿½
 public class MultiStopButtonManager : MonoBehaviour
 {
     public Button Stopbtn;
     public Button Xbtn;
     public Button Resume;
     public Button Restart;
+    public Button BacktoStage;
     public Button Main_menu;
 
     public GameObject Stop_Channel;
@@ -55,6 +56,16 @@ public class MultiStopButtonManager : MonoBehaviour
             ispause = false;
 
             SceneManager.LoadScene("Main Scene");
+        });
+        this.BacktoStage.onClick.AddListener(() =>
+        {
+            ButtonAudio.Play();
+            this.Stop_Channel.gameObject.SetActive(false);
+
+            Time.timeScale = 1;
+            ispause = false;
+
+            SceneManager.LoadScene("Stage");
         });
         this.Main_menu.onClick.AddListener(() =>
         {

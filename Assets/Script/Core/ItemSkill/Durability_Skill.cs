@@ -95,6 +95,18 @@ public class Durability_Skill : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        if (coll.gameObject.name == "SPTwiceF(Clone)" && rigid == null)
+        {
+            randomNumber -= 1;
+            if (randomNumber > 0)
+            {
+                textMesh.text = randomNumber.ToString();
+            }
+            if (randomNumber <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
         if (coll.contacts != null && coll.contacts.Length > 0)
         {
             Vector2 dir = Vector2.Reflect(lastVelocity.normalized, coll.contacts[0].normal);

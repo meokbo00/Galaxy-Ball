@@ -28,7 +28,7 @@ public class HEnemyCenter : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "P1ball" || coll.gameObject.tag == "P2ball" || coll.gameObject.tag == "P1Item" || coll.gameObject.tag == "P2Item")
+        if (coll.gameObject.tag == "P1ball" || coll.gameObject.tag == "P2ball" || coll.gameObject.tag == "P1Item" || coll.gameObject.tag == "P2Item" || (coll.gameObject.tag == "Item" && coll.gameObject.name != "SPEndlessF(Clone)"))
         {
             Destroy(gameObject);
         }

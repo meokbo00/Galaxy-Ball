@@ -14,6 +14,7 @@ public class BallController : MonoBehaviour
     private int randomNumber;
     private TextMeshPro textMesh;
     private bool hasBeenReleased = false;
+    public float fontsize;
 
     public AudioSource HitSound;
     public AudioSource SwellSound;
@@ -27,7 +28,7 @@ public class BallController : MonoBehaviour
         textMesh = textObject.AddComponent<TextMeshPro>();
         randomNumber = Random.Range(1, 6);
         textMesh.text = randomNumber.ToString();
-        textMesh.fontSize = 4;
+        textMesh.fontSize = fontsize;
         textMesh.alignment = TextAlignmentOptions.Center;
         textMesh.autoSizeTextContainer = true;
         textMesh.rectTransform.localPosition = Vector3.zero;
@@ -71,14 +72,13 @@ public class BallController : MonoBehaviour
         }
         transform.localScale += Vector3.one * increase * Time.deltaTime;
         hasExpanded = true;
-        
     }
 
     private void OnCollisionEnter2D(Collision2D coll)
     {
         if (!hasExpanded)
         {
-           HitSound.Play();
+            HitSound.Play();
         }
         if ((coll.gameObject.tag == "P1ball" || coll.gameObject.tag == "P2ball" || coll.gameObject.tag == "P1Item" || coll.gameObject.tag == "P2Item"
             || coll.gameObject.tag == "EnemyBall" || coll.gameObject.tag == "Item") && rigid == null)
@@ -93,6 +93,20 @@ public class BallController : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        if (coll.gameObject.name == "SPTwiceF(Clone)" && rigid == null)
+        {
+            randomNumber -= 1;
+            if (randomNumber > 0)
+            {
+                textMesh.text = randomNumber.ToString();
+            }
+            if (randomNumber <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+
         if (coll.contacts != null && coll.contacts.Length > 0)
         {
             Vector2 dir = Vector2.Reflect(lastVelocity.normalized, coll.contacts[0].normal);
@@ -100,7 +114,6 @@ public class BallController : MonoBehaviour
                 rigid.velocity = dir * Mathf.Max(lastVelocity.magnitude, 0f); // 감속하지 않고 반사만 진행
         }
         this.iscolliding = true;
-
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
