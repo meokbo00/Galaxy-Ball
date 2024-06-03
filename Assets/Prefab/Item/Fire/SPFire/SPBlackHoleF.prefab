@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63778899f2b0d2744b0392b29b69db2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increase: 4
+  increase: 6
   hasExpanded: 0
   HitSound: {fileID: 6122956196635379741}
   SwellSound: {fileID: -3685959676915619341}

@@ -33,8 +33,7 @@ public class SPGameManager : MonoBehaviour
             case "Item_Force":fireitem = FireItemPrefab[3];break;
             case "Item_Invincible":fireitem = FireItemPrefab[4];break;
             case "Item_Small":fireitem = FireItemPrefab[5];break;
-            case "Item_Turret": fireitem = FireItemPrefab[6]; break;
-            case "Item_Twice": fireitem = FireItemPrefab[7]; break;
+            case "Item_Twice": fireitem = FireItemPrefab[6]; break;
 
         }
     }
@@ -55,7 +54,6 @@ public class SPGameManager : MonoBehaviour
                         Instantiate(fireitem, clickPosition, Quaternion.identity);
                         Debug.Log("P1이 아이템을 사용하였습니다");
                         Debug.Log("아이템의 이름은 " + fireitem.gameObject.name + "입니다");
-                        //P1FireMode = false;
                         isDragging = true;
                         fireitem = null;
                         break;
@@ -64,7 +62,6 @@ public class SPGameManager : MonoBehaviour
                     {
                         Instantiate(P1ballPrefab, clickPosition, Quaternion.identity);
                         Debug.Log("P1이 기본구체를 날렸습니다");
-                        //P1FireMode = false;
                         isDragging = true;
                         break;
                     }

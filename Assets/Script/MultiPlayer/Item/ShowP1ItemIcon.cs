@@ -21,9 +21,7 @@ public class ShowP1ItemIcon : MonoBehaviour
             case "Item_Force":nextIcon = P1Icon[3];break;
             case "Item_Invincible": nextIcon = P1Icon[4];break;
             case "Item_Small": nextIcon = P1Icon[5]; break;
-            case "Item_Spread": nextIcon = P1Icon[6]; break;
-            case "Item_Turret": nextIcon = P1Icon[7]; break;
-            case "Item_Twice": nextIcon = P1Icon[8]; break;
+            case "Item_Twice": nextIcon = P1Icon[6]; break;
         }
         if (nextIcon != null)
         {

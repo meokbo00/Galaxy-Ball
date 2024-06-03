@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9f61ffa1e631a6449924d2d83e420bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increase: 4
+  increase: 6
   hasExpanded: 0
   fontsize: 0.4
   BallMinHP: 1
