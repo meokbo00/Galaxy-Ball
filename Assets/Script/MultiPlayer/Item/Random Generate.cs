@@ -31,6 +31,5 @@ public class SphereSpawner : MonoBehaviour
 
         int prefabIndex = Random.Range(0, spherePrefabs.Length);
         Instantiate(spherePrefabs[prefabIndex], randomPosition, Quaternion.identity);
-        Debug.Log("�������� �����Ͽ����ϴ�");
     }
 }
