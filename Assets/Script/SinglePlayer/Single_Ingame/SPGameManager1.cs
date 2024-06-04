@@ -91,10 +91,14 @@ public class SPGameManager : MonoBehaviour
         if (totalenemy <= 0)
         {
             gameManager = FindObjectOfType<StageGameManager>();
+<<<<<<< HEAD
             if (gameManager.StageClearID == StageState.chooseStage)
             {
                 gameManager.StageClearID += 1;
             }
+=======
+            gameManager.StageClearID += 1;
+>>>>>>> 26e3488b0c943f79ea0ca4d9c82a1d4664da40a6
             SceneManager.LoadScene("Clear");
         }
     }
