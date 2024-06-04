@@ -5494,7 +5494,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d080cc2a0477f4b9323aef3278e59c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   StageClearID: 1
+=======
+  StageClearID: 2
+>>>>>>> cb0dc7649e60202f0a2bc8ced1acd3a3e0fa3f6e
   isDragging: 0
 --- !u!4 &2105216457
 Transform:
