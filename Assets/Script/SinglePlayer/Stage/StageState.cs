@@ -50,7 +50,7 @@ public class StageState : MonoBehaviour
             }
         }
         chooseStage = stagenum;
-        Debug.Log(chooseStage);
+        Debug.Log("chooseStage : " + chooseStage);
         FindObjectOfType<ShowStageBox>().UpdateStageInfo(chooseStage);
     }
 

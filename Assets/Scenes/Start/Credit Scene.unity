@@ -225,7 +225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000038146973, y: -511}
+  m_AnchoredPosition: {x: 0.000038146973, y: -32}
   m_SizeDelta: {x: 1080, y: 1336.5642}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &335500803
@@ -248,13 +248,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Button UI
-
-    -<a href="https://www.freepik.com/free-vector/medieval-game-interface_2874386.htm#page=3&query=game%20ui&position=37&from_view=keyword&track=ais&uuid=3efb279b-0848-466b-875c-1e99d51117e3">Image
-    by macrovector</a> on Freepik'
+  m_text: "Button UI\n-<a href=\"https://www.freepik.com/free-vector/medieval-game-interface_2874386.htm#page=3&query=game%20ui&position=37&from_view=keyword&track=ais&uuid=3efb279b-0848-466b-875c-1e99d51117e3\">Image
+    by macrovector</a> on Freepik\n\n<a href=\"https://www.flaticon.com/kr/free-icons/\"
+    title=\"\uC6B0\uC8FC \uC544\uC774\uCF58\">\uC6B0\uC8FC \uC544\uC774\uCF58 \uC81C\uC791\uC790:
+    Icongeek26 - Flaticon</a>\n\n<a href=\"https://kr.freepik.com/free-vector/dark-set-game-button-elements-progress-bar-bright-different-forms-buttons-games-app_13466781.htm#fromView=search&page=5&position=47&uuid=b4f2896a-ee4d-422b-83ba-187d623b3b19\">\uC791\uAC00
+    jcomp \uCD9C\uCC98 Freepik</a>"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 064928367d0872b4da7404799e8eeb6f, type: 2}
+  m_sharedMaterial: {fileID: 4496936557231279810, guid: 064928367d0872b4da7404799e8eeb6f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

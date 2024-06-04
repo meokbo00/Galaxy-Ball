@@ -13,32 +13,34 @@ public class SPGameManager : MonoBehaviour
     public GameObject fireitem;
 
     private Vector3 clickPosition;
+    private StageGameManager gameManager;
     public bool isDragging = false;
     public static float shotDistance;
     public static Vector3 shotDirection;
 
-    //public bool P1FireMode = true;
     private void Start()
     {
         P1firezone.gameObject.SetActive(true);
+        Debug.Log(StageState.chooseStage);
     }
     public void PrintDestroyedicontag(string icontag)
     {
         this.fireitem = null;
         switch (icontag)
         {
-            case "Item_BlackHole": fireitem = FireItemPrefab[0];break;
-            case "Item_Endless":fireitem = FireItemPrefab[1];break;
-            case "Item_Fasten":fireitem = FireItemPrefab[2];break;
-            case "Item_Force":fireitem = FireItemPrefab[3];break;
-            case "Item_Invincible":fireitem = FireItemPrefab[4];break;
-            case "Item_Small":fireitem = FireItemPrefab[5];break;
+            case "Item_BlackHole": fireitem = FireItemPrefab[0]; break;
+            case "Item_Endless": fireitem = FireItemPrefab[1]; break;
+            case "Item_Fasten": fireitem = FireItemPrefab[2]; break;
+            case "Item_Force": fireitem = FireItemPrefab[3]; break;
+            case "Item_Invincible": fireitem = FireItemPrefab[4]; break;
+            case "Item_Small": fireitem = FireItemPrefab[5]; break;
             case "Item_Twice": fireitem = FireItemPrefab[6]; break;
 
         }
     }
     private void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
             clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -50,7 +52,6 @@ public class SPGameManager : MonoBehaviour
                 {
                     if (fireitem != null)
                     {
-                        //fireitem.gameObject.tag = "P1Item";
                         Instantiate(fireitem, clickPosition, Quaternion.identity);
                         Debug.Log("P1이 아이템을 사용하였습니다");
                         Debug.Log("아이템의 이름은 " + fireitem.gameObject.name + "입니다");
@@ -84,6 +85,17 @@ public class SPGameManager : MonoBehaviour
         if (totalBalls > 12)
         {
             SceneManager.LoadScene("Fail");
+        }
+
+        int totalenemy = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        if (totalenemy <= 0)
+        {
+            gameManager = FindObjectOfType<StageGameManager>();
+            if (gameManager.StageClearID == StageState.chooseStage)
+            {
+                gameManager.StageClearID += 1;
+            }
+            SceneManager.LoadScene("Clear");
         }
     }
 
