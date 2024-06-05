@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using UnityEngine;
 using Newtonsoft.Json;
 using TMPro;
@@ -46,3 +47,26 @@ public class Information
     public int id;
     public string String;
 }
+=======
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ShowInformationtxt : MonoBehaviour
+{
+    class Chat
+    {
+        public int id;
+        public string[] texts;
+    }
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        
+    }
+}
+>>>>>>> e65cd898f90861f24e975eb23e56135511824596
