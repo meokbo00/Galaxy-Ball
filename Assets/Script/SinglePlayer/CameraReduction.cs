@@ -9,11 +9,7 @@ public class CameraReduction : MonoBehaviour
     private float[] sizes;
     private string[] sizeTexts = { "100%", "75%", "50%" };
 
-<<<<<<< HEAD
     public TextMeshProUGUI buttonText; 
-=======
-    public TextMeshProUGUI buttonText; // 버튼 텍스트 참조
->>>>>>> 9188faf6e3254b3c82951e2e2466112f12e8961c
 
     void Start()
     {
