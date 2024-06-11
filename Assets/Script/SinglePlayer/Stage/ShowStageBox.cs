@@ -28,6 +28,10 @@ public class ShowStageBox : MonoBehaviour
         if (selectedStage != null)
         {
             stageTitleText.text = selectedStage.StageTitle;
+<<<<<<< HEAD
+=======
+            Debug.Log($"Stage {chooseStage} 정보가 업데이트되었습니다: {selectedStage.StageTitle} - {selectedStage.StageDetail}");
+>>>>>>> 1060694ac294c2727fc3c77bad9421d92ceca4aa
         }
         else
         {
