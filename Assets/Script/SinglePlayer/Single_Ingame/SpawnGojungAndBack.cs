@@ -39,6 +39,7 @@ public class SpawnGojungAndBack : MonoBehaviour
                         {
                             spriteRenderer.color = color;
                         }
+<<<<<<< HEAD
                     }
                     if (colorData.Gojungnum > 0 && colorData.Gojungnum <= Gojungtype.Length)
                     {
@@ -46,6 +47,25 @@ public class SpawnGojungAndBack : MonoBehaviour
                     }
                     else
                     {
+=======
+                        else
+                        {
+                            Debug.LogError("SpriteRenderer 컴포넌트를 찾을 수 없습니다.");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogError("\"BackGround\"라는 이름의 배경 오브젝트를 찾을 수 없습니다.");
+                    }
+
+                    // Gojungnum에 해당하는 오브젝트를 스폰합니다.
+                    if (colorData.Gojungnum > 0 && colorData.Gojungnum <= Gojungtype.Length)
+                    {
+                        Instantiate(Gojungtype[colorData.Gojungnum - 1], new Vector3(0, 0, 0), Quaternion.identity);
+                    }
+                    else
+                    {
+>>>>>>> 5aa548128a84e9dd2f7fbe18496f38796e15ca87
                         Debug.LogError("Gojungnum 값이 배열 범위를 벗어납니다.");
                     }
                 }
@@ -59,5 +79,12 @@ public class SpawnGojungAndBack : MonoBehaviour
                 Debug.LogError($"ID가 {stage}인 데이터를 찾을 수 없습니다.");
             }
         }
+<<<<<<< HEAD
+=======
+        else
+        {
+            Debug.LogError("JSON 파일이 할당되지 않았습니다.");
+        }
+>>>>>>> 5aa548128a84e9dd2f7fbe18496f38796e15ca87
     }
 }
