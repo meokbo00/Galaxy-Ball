@@ -1,8 +1,7 @@
 [
    {
-      "id":8,
+      "id":1,
       "Gojungnum":1,
-<<<<<<< HEAD
       "Color":"FFFFFF"
    },
    {
@@ -77,12 +76,6 @@
    },
    {
       "id":16,
-=======
-      "Color":"29B0F6"
-   },
-   {
-      "id":9,
->>>>>>> 5aa548128a84e9dd2f7fbe18496f38796e15ca87
       "Gojungnum":2,
       "Color":"813AE7"
    }
