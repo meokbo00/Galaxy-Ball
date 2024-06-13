@@ -96,7 +96,11 @@ public class EnemyBulletControl : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+<<<<<<< Updated upstream
         if(coll.gameObject.name == "SPTwiceF(Clone)")
+=======
+        if(coll.gameObject.name == "SPTwiceF(Clone)" || coll.gameObject.name == "TwiceBullet(Clone)")
+>>>>>>> Stashed changes
         {
             randomNumber -= 1;
             textMesh.text = randomNumber.ToString();

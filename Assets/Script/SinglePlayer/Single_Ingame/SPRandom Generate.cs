@@ -19,7 +19,11 @@ public class SPRandomGenerate : MonoBehaviour
         stageGameManager = FindObjectOfType<StageGameManager>();
         if (stageGameManager == null)
         {
+<<<<<<< Updated upstream
             Debug.LogError("StageGameManager¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+=======
+            Debug.LogError("StageGameManagerï¿½ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
+>>>>>>> Stashed changes
         }
     }
 
@@ -40,6 +44,7 @@ public class SPRandomGenerate : MonoBehaviour
 
         int maxIndex;
 
+<<<<<<< Updated upstream
         // StageClearID¿¡ µû¸¥ ÇÁ¸®ÆÕ ÀÎµ¦½º °áÁ¤
         if (stageGameManager.StageClearID <= 5)
         {
@@ -56,6 +61,31 @@ public class SPRandomGenerate : MonoBehaviour
         else
         {
             maxIndex = spherePrefabs.Length; // ¸ðµç ÇÁ¸®ÆÕ »ç¿ë
+=======
+        if (stageGameManager.StageClearID <= 6)
+        {
+            return;
+        }
+        else if (stageGameManager.StageClearID <= 10)
+        {
+            maxIndex = 0;
+        }
+        else if (stageGameManager.StageClearID <= 17)
+        {
+            maxIndex = 1;
+        }
+        else if (stageGameManager.StageClearID <= 25)
+        {
+            maxIndex = 2;
+        }
+        else if (stageGameManager.StageClearID <= 32)
+        {
+            maxIndex = 3;
+        }
+        else
+        {
+            maxIndex = spherePrefabs.Length;
+>>>>>>> Stashed changes
         }
 
         int prefabIndex = Random.Range(0, maxIndex);
