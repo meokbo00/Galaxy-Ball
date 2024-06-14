@@ -26,27 +26,47 @@
    },
    {
       "id":6,
+<<<<<<< HEAD
       "StagePrefab":6,
+=======
+      "Gojungnum":2,
+>>>>>>> d8eea49c10508ba94a6f107f0aa622b920ae6eca
       "Color":"94BBDB"
    },
    {
       "id":7,
+<<<<<<< HEAD
       "StagePrefab":7,
+=======
+      "Gojungnum":4,
+>>>>>>> d8eea49c10508ba94a6f107f0aa622b920ae6eca
       "Color":"E69B96"
    },
    {
       "id":8,
+<<<<<<< HEAD
       "StagePrefab":8,
+=======
+      "Gojungnum":2,
+>>>>>>> d8eea49c10508ba94a6f107f0aa622b920ae6eca
       "Color":"56C6FF"
    },
    {
       "id":9,
+<<<<<<< HEAD
       "StagePrefab":9,
+=======
+      "Gojungnum":3,
+>>>>>>> d8eea49c10508ba94a6f107f0aa622b920ae6eca
       "Color":"8B94B5"
    },
    {
       "id":10,
+<<<<<<< HEAD
       "StagePrefab":10,
+=======
+      "Gojungnum":3,
+>>>>>>> d8eea49c10508ba94a6f107f0aa622b920ae6eca
       "Color":"AB2B2B"
    },
    {
