@@ -4134,6 +4134,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
 --- !u!1 &1398692684
 GameObject:
   m_ObjectHideFlags: 0
@@ -4165,6 +4166,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1962878251}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> cad4a24adf88abaf6f1ed1760217221441751645
 --- !u!1 &1402544366
 GameObject:
   m_ObjectHideFlags: 0
@@ -6396,7 +6399,10 @@ Transform:
   m_Children:
   - {fileID: 489275777}
   - {fileID: 1575512001}
+<<<<<<< HEAD
   - {fileID: 1398692685}
+=======
+>>>>>>> cad4a24adf88abaf6f1ed1760217221441751645
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1989608331
