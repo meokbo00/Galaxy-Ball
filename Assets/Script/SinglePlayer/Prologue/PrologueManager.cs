@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+<<<<<<< HEAD
 using UnityEngine.UI;
 
 public class PrologueManager : MonoBehaviour
@@ -50,3 +51,20 @@ public class PrologueManager : MonoBehaviour
         image.color = color;
     }
 }
+=======
+
+public class PrologueManager : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
+>>>>>>> 04fec377b2d05bb9fa9bbe0e64030911b4f22d59
