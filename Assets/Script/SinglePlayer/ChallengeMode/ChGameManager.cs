@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,10 +8,8 @@ public class ChallengeGameManager : MonoBehaviour
 {
     public GameObject P1ballPrefab;
     public GameObject[] FireItemPrefab;
-
     public GameObject P1firezone;
     public GameObject P1Itemsave;
-
     public GameObject fireitem;
 
     private Vector3 clickPosition;
@@ -18,6 +17,11 @@ public class ChallengeGameManager : MonoBehaviour
     public bool isDragging = false;
     public static float shotDistance;
     public static Vector3 shotDirection;
+
+    public int maxscorenum;
+    public int scorenum;
+    public TMP_Text maxscoretext;
+    public TMP_Text scoretext;
 
     private void Start()
     {
@@ -37,7 +41,8 @@ public class ChallengeGameManager : MonoBehaviour
     }
     private void Update()
     {
-
+        maxscoretext.text = maxscorenum.ToString();
+        scoretext.text = scorenum.ToString();
         if (Input.GetMouseButtonDown(0))
         {
             clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -50,8 +55,8 @@ public class ChallengeGameManager : MonoBehaviour
                     if (fireitem != null)
                     {
                         Instantiate(fireitem, clickPosition, Quaternion.identity);
-                        Debug.Log("P1ÀÌ ¾ÆÀÌÅÛÀ» »ç¿ëÇÏ¿´½À´Ï´Ù");
-                        Debug.Log("¾ÆÀÌÅÛÀÇ ÀÌ¸§Àº " + fireitem.gameObject.name + "ÀÔ´Ï´Ù");
+                        Debug.Log("P1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ï¿½Ï´ï¿½");
+                        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ " + fireitem.gameObject.name + "ï¿½Ô´Ï´ï¿½");
                         isDragging = true;
                         fireitem = null;
                         break;
@@ -59,7 +64,7 @@ public class ChallengeGameManager : MonoBehaviour
                     else
                     {
                         Instantiate(P1ballPrefab, clickPosition, Quaternion.identity);
-                        Debug.Log("P1ÀÌ ±âº»±¸Ã¼¸¦ ³¯·È½À´Ï´Ù");
+                        Debug.Log("P1ï¿½ï¿½ ï¿½âº»ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½È½ï¿½ï¿½Ï´ï¿½");
                         isDragging = true;
                         break;
                     }
