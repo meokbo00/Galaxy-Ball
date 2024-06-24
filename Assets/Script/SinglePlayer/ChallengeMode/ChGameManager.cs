@@ -25,8 +25,13 @@ public class ChallengeGameManager : MonoBehaviour
 
     private void Start()
     {
+        // 게임 시작 시 저장된 maxscorenum 불러오기
+        maxscorenum = PlayerPrefs.GetInt("MaxScore", 0);
+        maxscoretext.text = "Best : " + maxscorenum.ToString();
+
         P1firezone.gameObject.SetActive(true);
     }
+
     public void PrintDestroyedicontag(string icontag)
     {
         this.fireitem = null;
@@ -39,10 +44,20 @@ public class ChallengeGameManager : MonoBehaviour
             case "Item_Invincible": fireitem = FireItemPrefab[4]; break;
         }
     }
+
     private void Update()
     {
-        maxscoretext.text = maxscorenum.ToString();
-        scoretext.text = scorenum.ToString();
+        if (maxscorenum < scorenum)
+        {
+            maxscorenum = scorenum;
+            // maxscorenum이 갱신될 때마다 저장
+            PlayerPrefs.SetInt("MaxScore", maxscorenum);
+            PlayerPrefs.Save();
+        }
+
+        maxscoretext.text = "Best : " + maxscorenum.ToString();
+        scoretext.text = "Score : " + scorenum.ToString();
+
         if (Input.GetMouseButtonDown(0))
         {
             clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -55,8 +70,8 @@ public class ChallengeGameManager : MonoBehaviour
                     if (fireitem != null)
                     {
                         Instantiate(fireitem, clickPosition, Quaternion.identity);
-                        Debug.Log("P1�� �������� ����Ͽ����ϴ�");
-                        Debug.Log("�������� �̸��� " + fireitem.gameObject.name + "�Դϴ�");
+                        Debug.Log("P1 아이템을 사용했습니다.");
+                        Debug.Log("아이템 이름은 " + fireitem.gameObject.name + "입니다.");
                         isDragging = true;
                         fireitem = null;
                         break;
@@ -64,7 +79,7 @@ public class ChallengeGameManager : MonoBehaviour
                     else
                     {
                         Instantiate(P1ballPrefab, clickPosition, Quaternion.identity);
-                        Debug.Log("P1�� �⺻��ü�� ���Ƚ��ϴ�");
+                        Debug.Log("P1 기본 공을 생성했습니다.");
                         isDragging = true;
                         break;
                     }
@@ -89,5 +104,4 @@ public class ChallengeGameManager : MonoBehaviour
             SceneManager.LoadScene("ChallengeFail");
         }
     }
-
 }
