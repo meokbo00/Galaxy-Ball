@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,10 +8,8 @@ public class ChallengeGameManager : MonoBehaviour
 {
     public GameObject P1ballPrefab;
     public GameObject[] FireItemPrefab;
-
     public GameObject P1firezone;
     public GameObject P1Itemsave;
-
     public GameObject fireitem;
 
     private Vector3 clickPosition;
@@ -19,10 +18,23 @@ public class ChallengeGameManager : MonoBehaviour
     public static float shotDistance;
     public static Vector3 shotDirection;
 
+    public int maxscorenum;
+    public int scorenum;
+    public TMP_Text maxscoretext;
+    public TMP_Text scoretext;
+    public static class GameData
+    {
+        public static int CurrentScore;
+    }
     private void Start()
     {
+        // Í≤åÏûÑ ÏãúÏûë Ïãú Ï†ÄÏû•Îêú maxscorenum Î∂àÎü¨Ïò§Í∏∞
+        maxscorenum = PlayerPrefs.GetInt("MaxScore", 0);
+        maxscoretext.text = "Best : " + maxscorenum.ToString();
+
         P1firezone.gameObject.SetActive(true);
     }
+
     public void PrintDestroyedicontag(string icontag)
     {
         this.fireitem = null;
@@ -35,8 +47,19 @@ public class ChallengeGameManager : MonoBehaviour
             case "Item_Invincible": fireitem = FireItemPrefab[4]; break;
         }
     }
+
     private void Update()
     {
+        if (maxscorenum < scorenum)
+        {
+            maxscorenum = scorenum;
+            // maxscorenumÏù¥ Í∞±Ïã†Îê† ÎïåÎßàÎã§ Ï†ÄÏû•
+            PlayerPrefs.SetInt("MaxScore", maxscorenum);
+            PlayerPrefs.Save();
+        }
+
+        maxscoretext.text = "Best : " + maxscorenum.ToString();
+        scoretext.text = "Score : " + scorenum.ToString();
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -50,8 +73,8 @@ public class ChallengeGameManager : MonoBehaviour
                     if (fireitem != null)
                     {
                         Instantiate(fireitem, clickPosition, Quaternion.identity);
-                        Debug.Log("P1¿Ã æ∆¿Ã≈€¿ª ªÁøÎ«œø¥Ω¿¥œ¥Ÿ");
-                        Debug.Log("æ∆¿Ã≈€¿« ¿Ã∏ß¿∫ " + fireitem.gameObject.name + "¿‘¥œ¥Ÿ");
+                        Debug.Log("P1 ÏïÑÏù¥ÌÖúÏùÑ ÏÇ¨Ïö©ÌñàÏäµÎãàÎã§.");
+                        Debug.Log("ÏïÑÏù¥ÌÖú Ïù¥Î¶ÑÏùÄ " + fireitem.gameObject.name + "ÏûÖÎãàÎã§.");
                         isDragging = true;
                         fireitem = null;
                         break;
@@ -59,7 +82,7 @@ public class ChallengeGameManager : MonoBehaviour
                     else
                     {
                         Instantiate(P1ballPrefab, clickPosition, Quaternion.identity);
-                        Debug.Log("P1¿Ã ±‚∫ª±∏√º∏¶ ≥Ø∑»Ω¿¥œ¥Ÿ");
+                        Debug.Log("P1 Í∏∞Î≥∏ Í≥µÏùÑ ÏÉùÏÑ±ÌñàÏäµÎãàÎã§.");
                         isDragging = true;
                         break;
                     }
@@ -81,6 +104,7 @@ public class ChallengeGameManager : MonoBehaviour
                        GameObject.FindGameObjectsWithTag("P1ball").Length;
         if (totalBalls > 15)
         {
+            GameData.CurrentScore = scorenum;
             SceneManager.LoadScene("ChallengeFail");
         }
     }
