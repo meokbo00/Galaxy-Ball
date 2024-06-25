@@ -22,14 +22,10 @@ public class ChallengeGameManager : MonoBehaviour
     public int scorenum;
     public TMP_Text maxscoretext;
     public TMP_Text scoretext;
-<<<<<<< HEAD
     public static class GameData
     {
         public static int CurrentScore;
     }
-=======
-
->>>>>>> 0dba3c60edcee64bfa467d7148a2960023cdb9ef
     private void Start()
     {
         // 게임 시작 시 저장된 maxscorenum 불러오기
@@ -112,8 +108,5 @@ public class ChallengeGameManager : MonoBehaviour
             SceneManager.LoadScene("ChallengeFail");
         }
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 0dba3c60edcee64bfa467d7148a2960023cdb9ef
 }
