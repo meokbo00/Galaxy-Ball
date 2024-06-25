@@ -18,6 +18,13 @@ public class BulletSpawn : MonoBehaviour
         {
             backgroundCollider = background.GetComponent<BoxCollider2D>();
         }
+<<<<<<< HEAD
+=======
+        else
+        {
+            Debug.LogError("BackGround ������Ʈ�� ã�� �� �����ϴ�.");
+        }
+>>>>>>> 0dba3c60edcee64bfa467d7148a2960023cdb9ef
 
         timer = spawnInterval;
     }
@@ -36,6 +43,15 @@ public class BulletSpawn : MonoBehaviour
 
     void SpawnBullet()
     {
+<<<<<<< HEAD
+=======
+        if (bullets.Length == 0 || backgroundCollider == null)
+        {
+            Debug.LogWarning("������ �Ѿ� �������� ���ų� BackGround Collider�� �����ϴ�.");
+            return;
+        }
+
+>>>>>>> 0dba3c60edcee64bfa467d7148a2960023cdb9ef
         float x = Random.Range(backgroundCollider.bounds.min.x, backgroundCollider.bounds.max.x);
         float y = Random.Range(backgroundCollider.bounds.min.y, backgroundCollider.bounds.max.y);
         Vector2 spawnPosition = new Vector2(x, y);
