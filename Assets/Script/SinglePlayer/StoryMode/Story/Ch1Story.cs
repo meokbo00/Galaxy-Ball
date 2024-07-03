@@ -50,15 +50,11 @@ public class Ch1Story : MonoBehaviour
             {
                 Clearhere.gameObject.SetActive(true);
             }
-<<<<<<< HEAD
         }
 
         if (showText != null && stageGameManager.StageClearID == 6)
         {
             if (showText.logTextIndex == 4)
-=======
-            if(showText.logTextIndex >= 29)
->>>>>>> cd284b6250268c4f0da91c7f1f8d07df1efea544
             {
                 StartCoroutine(IncreaseCameraSize(mainCamera, 112, 5.5f));
             }
@@ -86,11 +82,7 @@ public class Ch1Story : MonoBehaviour
     {
         if (chatId == 1)
         {
-<<<<<<< HEAD
             Debug.Log("ID 1 채팅이 완료되었습니다.");
-=======
-            Debug.Log("ID 1�� ä���� �Ϸ�Ǿ����ϴ�.");
->>>>>>> cd284b6250268c4f0da91c7f1f8d07df1efea544
         }
     }
 
