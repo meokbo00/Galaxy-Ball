@@ -173,6 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyInfos:
   - {fileID: 5663681726111104043, guid: 2cc201e51400ac9439e8cc9edd37be12, type: 3}
+<<<<<<< HEAD
   - {fileID: 5663681726111104043, guid: 870cd0e8e076b78479e67f7877abd934, type: 3}
   - {fileID: 5663681726111104043, guid: 3e4f24825985fe24db09e23d731dbc8b, type: 3}
   - {fileID: 5663681726111104043, guid: 076d15e8c54d98c4ea1582da089692a3, type: 3}
@@ -203,6 +204,10 @@ MonoBehaviour:
   - {fileID: 5663681726111104043, guid: cd03ce6c11b44e2469306e9aff910bd9, type: 3}
   - {fileID: 5663681726111104043, guid: 2541d58c6b0a3c74dab0ebc3e9070a82, type: 3}
   - {fileID: 5663681726111104043, guid: 50b6377f669d3dd43901249e195d800b, type: 3}
+=======
+  - {fileID: 5663681726111104043, guid: 2cc201e51400ac9439e8cc9edd37be12, type: 3}
+  - {fileID: 5663681726111104043, guid: 2cc201e51400ac9439e8cc9edd37be12, type: 3}
+>>>>>>> 2b88a78f67a8f2bd5f60d661c2be108c2a57db2d
   canvasTransform: {fileID: 1619867829}
 --- !u!1 &86123951
 GameObject:
