@@ -2889,8 +2889,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d148feff74355c74991432adbbf4e209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Fadeinout: {fileID: 1239783449}
   RemainTime: {fileID: 1215371884}
+=======
+>>>>>>> 17bcf4c21ff3c9ee138a41d6376ba025b92a58b7
 --- !u!1 &300127166
 GameObject:
   m_ObjectHideFlags: 0
