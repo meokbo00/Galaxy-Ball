@@ -2,7 +2,10 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+<<<<<<< HEAD
 using UnityEngine.SceneManagement; // 씬 전환을 위해 추가
+=======
+>>>>>>> 7b90238aea4e51e77d0015c6da859eb111a1afdb
 
 public class Ch1_2Story : MonoBehaviour
 {
@@ -34,8 +37,14 @@ public class Ch1_2Story : MonoBehaviour
             remainTime.years = 0;
             remainTime.days = 0;
             remainTime.hours = 0;
+<<<<<<< HEAD
             remainTime.minutes = 0;
             remainTime.seconds = 0;
+=======
+            remainTime.minutes = 2;
+            remainTime.seconds = 30;
+
+>>>>>>> 7b90238aea4e51e77d0015c6da859eb111a1afdb
 
             SpriteRenderer[] spriteRenderers = creation.GetComponentsInChildren<SpriteRenderer>();
             foreach (SpriteRenderer sr in spriteRenderers)
@@ -57,6 +66,7 @@ public class Ch1_2Story : MonoBehaviour
 
         if (showText != null && stageGameManager.StageClearID == 6)
         {
+<<<<<<< HEAD
             if (showText.logTextIndex > 38)
             {
                 Fadeinout.SetActive(false);
@@ -87,5 +97,16 @@ public class Ch1_2Story : MonoBehaviour
 
         // "Main Stage"로 씬 전환
         SceneManager.LoadScene("Main Stage");
+=======
+            if (showText.logTextIndex == 2)
+            {
+                Fadeinout.SetActive(false);
+            }
+            if (showText.logTextIndex == 8)
+            {
+
+            }
+        }
+>>>>>>> 7b90238aea4e51e77d0015c6da859eb111a1afdb
     }
 }

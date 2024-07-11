@@ -28,7 +28,11 @@ public class RemainTime : MonoBehaviour
 
     void DisplayTime()
     {
+<<<<<<< HEAD
         timeDisplay.text = $"개발자의 코드 수정까지\n{years}년 {days}일 {hours}시간 {minutes}분 {seconds}초";
+=======
+        timeDisplay.text = $"�������� �ڵ� ��������\n{years}�� {days}�� {hours}�ð� {minutes}�� {seconds}��";
+>>>>>>> 7b90238aea4e51e77d0015c6da859eb111a1afdb
     }
 
     void DecreaseTime()
