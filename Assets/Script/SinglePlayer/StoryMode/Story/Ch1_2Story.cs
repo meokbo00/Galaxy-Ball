@@ -2,10 +2,12 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement; // �� ��ȯ�� ���� �߰�
 
 public class Ch1_2Story : MonoBehaviour
 {
     StageGameManager stageGameManager;
+    StageBallController stageBallController;
     private ShowText showText;
     public GameObject Clock;
     public GameObject Fadeinout;
@@ -19,6 +21,7 @@ public class Ch1_2Story : MonoBehaviour
         fadeImage = Fadeinout.GetComponent<Image>();
         stageGameManager = FindObjectOfType<StageGameManager>();
         TextManager textManager = FindObjectOfType<TextManager>();
+        stageBallController = FindObjectOfType<StageBallController>();
 
         Color color = fadeImage.color;
         color.a = 1f;
@@ -26,6 +29,7 @@ public class Ch1_2Story : MonoBehaviour
 
         if (stageGameManager.StageClearID == 6)
         {
+            stageBallController.enabled = false;
             Fadeinout.SetActive(true);
             textManager.GiveMeTextId(4);
             Clock.SetActive(true);
@@ -33,9 +37,8 @@ public class Ch1_2Story : MonoBehaviour
             remainTime.years = 0;
             remainTime.days = 0;
             remainTime.hours = 0;
-            remainTime.minutes = 2;
-            remainTime.seconds = 30;
-
+            remainTime.minutes = 0;
+            remainTime.seconds = 0;
 
             SpriteRenderer[] spriteRenderers = creation.GetComponentsInChildren<SpriteRenderer>();
             foreach (SpriteRenderer sr in spriteRenderers)
@@ -57,14 +60,36 @@ public class Ch1_2Story : MonoBehaviour
 
         if (showText != null && stageGameManager.StageClearID == 6)
         {
-            if (showText.logTextIndex == 2)
+            if (showText.logTextIndex > 38)
             {
+                stageBallController.enabled = true;
                 Fadeinout.SetActive(false);
             }
-            if (showText.logTextIndex == 8)
+            if (showText.logTextIndex == 48)
             {
-
+                StartCoroutine(FadeIn());
             }
         }
+    }
+
+    IEnumerator FadeIn()
+    {
+        Fadeinout.SetActive(true);
+        Color color = fadeImage.color;
+        color.a = 0f;
+        fadeImage.color = color;
+
+        while (color.a < 1f)
+        {
+            color.a += Time.deltaTime / 5; // 2�ʿ� ���� ���̵� ��
+            fadeImage.color = color;
+            yield return null;
+        }
+
+        // ���İ��� 1�� �Ǹ� 3�� ���
+        yield return new WaitForSeconds(3f);
+
+        // "Main Stage"�� �� ��ȯ
+        SceneManager.LoadScene("Main Stage");
     }
 }
