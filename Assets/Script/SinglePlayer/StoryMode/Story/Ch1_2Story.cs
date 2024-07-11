@@ -2,7 +2,11 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+<<<<<<< HEAD
 using UnityEngine.SceneManagement; // ï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
+=======
+using UnityEngine.SceneManagement; // ¾À ÀüÈ¯À» À§ÇØ Ãß°¡
+>>>>>>> 8237a960678fcc60926e65bab54cb94d2e566c32
 
 public class Ch1_2Story : MonoBehaviour
 {
@@ -81,15 +85,26 @@ public class Ch1_2Story : MonoBehaviour
 
         while (color.a < 1f)
         {
+<<<<<<< HEAD
             color.a += Time.deltaTime / 5; // 2ï¿½Ê¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½
+=======
+            color.a += Time.deltaTime / 5; // 2ÃÊ¿¡ °ÉÃÄ ÆäÀÌµå ÀÎ
+>>>>>>> 8237a960678fcc60926e65bab54cb94d2e566c32
             fadeImage.color = color;
             yield return null;
         }
 
+<<<<<<< HEAD
         // ï¿½ï¿½ï¿½Ä°ï¿½ï¿½ï¿½ 1ï¿½ï¿½ ï¿½Ç¸ï¿½ 3ï¿½ï¿½ ï¿½ï¿½ï¿½
         yield return new WaitForSeconds(3f);
 
         // "Main Stage"ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½È¯
+=======
+        // ¾ËÆÄ°ªÀÌ 1ÀÌ µÇ¸é 3ÃÊ ´ë±â
+        yield return new WaitForSeconds(3f);
+
+        // "Main Stage"·Î ¾À ÀüÈ¯
+>>>>>>> 8237a960678fcc60926e65bab54cb94d2e566c32
         SceneManager.LoadScene("Main Stage");
     }
 }
