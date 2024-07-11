@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class Ch1Story : MonoBehaviour
 {
-    public bool WatchPrologue2 = false;
     public GameObject Clearhere;
     private ShowText showText;
     private StageGameManager stageGameManager;
@@ -15,6 +14,7 @@ public class Ch1Story : MonoBehaviour
     public Image FadeIn;
     public GameObject Stage;
     public GameObject RemainTime;
+
     void Start()
     {
         stageGameManager = FindObjectOfType<StageGameManager>();
@@ -34,10 +34,15 @@ public class Ch1Story : MonoBehaviour
         {
             textManager.GiveMeTextId(2);
         }
-        if (stageGameManager.StageClearID == 6)
+        if (stageGameManager.StageClearID == 5.5)
         {
             Destroy(Stage);
             textManager.GiveMeTextId(3);
+        }
+        if(stageGameManager.StageClearID == 6)
+        {
+            Destroy(Stage);
+            RemainTime.SetActive(true);
         }
     }
 
@@ -47,7 +52,7 @@ public class Ch1Story : MonoBehaviour
 
         if (showText != null && stageGameManager.StageClearID == 1)
         {
-            if(showText.logTextIndex < 41)
+            if (showText.logTextIndex < 41)
             {
                 Stage.SetActive(false);
             }
@@ -58,7 +63,7 @@ public class Ch1Story : MonoBehaviour
             }
         }
 
-        if (showText != null && stageGameManager.StageClearID == 6)
+        if (showText != null && stageGameManager.StageClearID == 5.5)
         {
             if (showText.logTextIndex == 4)
             {
@@ -72,7 +77,7 @@ public class Ch1Story : MonoBehaviour
                     randomMovement.enabled = false;
                 }
             }
-            if (showText.logTextIndex == 21)
+            if (showText.logTextIndex == 23)
             {
                 ContinuousRandomMovement[] randomMovements = FindObjectsOfType<ContinuousRandomMovement>();
                 foreach (ContinuousRandomMovement randomMovement in randomMovements)
@@ -129,7 +134,9 @@ public class Ch1Story : MonoBehaviour
         fadeColor.a = 1;
         FadeIn.color = fadeColor;
         yield return new WaitForSeconds(3f);
-        this.WatchPrologue2 = true;
+
+        stageGameManager.StageClearID += 0.5f;
+        stageGameManager.SaveStageClearID();
         SceneManager.LoadScene("Prologue 2");
     }
 }

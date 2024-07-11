@@ -631,8 +631,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC548\uB155\uD558\uC138\uC694 \uBC18\uAC11\uC2B5\uB2C8\uB2E4\n\uD14D\uC2A4\uD2B8
-    \uCD9C\uB825\uC785\uB2C8\uB2E4"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 872fc52617f7106429e5f22fb7e89e4c, type: 2}
   m_sharedMaterial: {fileID: 2326276519201562975, guid: 872fc52617f7106429e5f22fb7e89e4c, type: 2}
@@ -2889,6 +2888,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d148feff74355c74991432adbbf4e209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Clock: {fileID: 1215371884}
+  Fadeinout: {fileID: 1239783449}
+  creation: {fileID: 1812864032}
+  fadeImage: {fileID: 1239783451}
 --- !u!1 &300127166
 GameObject:
   m_ObjectHideFlags: 0
@@ -8846,7 +8849,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dcfbba5b6eba534e8d06acfac4f3d2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WatchPrologue2: 0
   Clearhere: {fileID: 1380336349}
   mainCamera: {fileID: 61403564}
   FadeIn: {fileID: 1239783451}
@@ -14945,12 +14947,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1555069170}
-  - {fileID: 1066859268}
   - {fileID: 1567017158}
   - {fileID: 1448208250}
   - {fileID: 1380336350}
-  - {fileID: 1239783450}
   - {fileID: 1215371885}
+  - {fileID: 1239783450}
+  - {fileID: 1066859268}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
