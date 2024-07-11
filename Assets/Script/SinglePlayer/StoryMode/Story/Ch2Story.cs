@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Ch2Story : MonoBehaviour
 {
-<<<<<<< HEAD
     public Camera Camera;
     public GameObject Fadein;
     StageGameManager stageGameManager;
@@ -39,17 +38,10 @@ public class Ch2Story : MonoBehaviour
         {
             textManager.GiveMeTextId(3);
         }
-=======
-
-    void Start()
-    {
-
->>>>>>> 7b90238aea4e51e77d0015c6da859eb111a1afdb
     }
 
     void Update()
     {
-<<<<<<< HEAD
         showText = FindObjectOfType<ShowText>();
         if (showText != null && stageGameManager.StageClearID == 6)
         {
@@ -78,8 +70,5 @@ public class Ch2Story : MonoBehaviour
             yield return null;
         }
         Camera.orthographicSize = toSize;
-=======
-
->>>>>>> 7b90238aea4e51e77d0015c6da859eb111a1afdb
     }
 }
