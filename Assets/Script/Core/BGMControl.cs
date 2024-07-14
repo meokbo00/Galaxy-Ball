@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+<<<<<<< HEAD
 using UnityEngine.SceneManagement;
+=======
+>>>>>>> 87dd06591c60f830e31410541e510eb7931d2614
 
 public class BGMControl : MonoBehaviour
 {
     public AudioSource[] BGM;
     public AudioSource[] SoundEffect;
+<<<<<<< HEAD
     public bool BGMSwitch = true;
     public bool SoundEffectSwitch = true;
 
@@ -20,6 +24,14 @@ public class BGMControl : MonoBehaviour
 
         // 게임 시작 시 저장된 상태를 불러오기
         LoadAudioSettings();
+=======
+    public bool BGMSwitch;
+    public bool SoundEffectSwitch;
+
+    void Start()
+    {
+        UpdateAudioSources();
+>>>>>>> 87dd06591c60f830e31410541e510eb7931d2614
     }
 
     void Update()
@@ -44,6 +56,7 @@ public class BGMControl : MonoBehaviour
             source.enabled = isEnabled;
         }
     }
+<<<<<<< HEAD
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -105,4 +118,6 @@ public class BGMControl : MonoBehaviour
         PlayerPrefs.SetInt("SoundEffectSwitch", SoundEffectSwitch ? 1 : 0);
         PlayerPrefs.Save();
     }
+=======
+>>>>>>> 87dd06591c60f830e31410541e510eb7931d2614
 }
