@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SCBallController : MonoBehaviour
 {
@@ -14,15 +15,13 @@ public class SCBallController : MonoBehaviour
     private bool isStopped = false;
     private int randomNumber;
     private TextMeshPro textMesh;
-    private bool hasBeenReleased = false; // ÃÖÃÊ Å¬¸¯ÀÌ µÇ¾ú´ÂÁö ¿©ºÎ¸¦ ÃßÀû
-
-    public AudioSource HitSound;
-    public AudioSource SwellSound;
-
+    private bool hasBeenReleased = false; // ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+    BGMControl bgmControl;
 
     private void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+        bgmControl = FindObjectOfType<BGMControl>();
 
         GameObject textObject = new GameObject("TextMeshPro");
         textObject.transform.parent = transform;
@@ -65,7 +64,7 @@ public class SCBallController : MonoBehaviour
 
         if (!hasExpanded)
         {
-            SwellSound.Play();
+            bgmControl.SoundEffectPlay(2);
         }
         transform.localScale += Vector3.one * increase * Time.deltaTime;
         hasExpanded = true;
@@ -75,7 +74,7 @@ public class SCBallController : MonoBehaviour
     {
         if (!hasExpanded)
         {
-            HitSound.Play();
+            bgmControl.SoundEffectPlay(1);
         }
 
         if ((coll.gameObject.tag == "P1ball" || coll.gameObject.tag == "P2ball") && rigid == null)
@@ -94,7 +93,7 @@ public class SCBallController : MonoBehaviour
         {
             Vector2 dir = Vector2.Reflect(lastVelocity.normalized, coll.contacts[0].normal);
             if (rigid != null)
-                rigid.velocity = dir * Mathf.Max(lastVelocity.magnitude, 0f); // °¨¼ÓÇÏÁö ¾Ê°í ¹Ý»ç¸¸ ÁøÇà
+                rigid.velocity = dir * Mathf.Max(lastVelocity.magnitude, 0f); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê°ï¿½ ï¿½Ý»ç¸¸ ï¿½ï¿½ï¿½ï¿½
         }
         this.iscolliding = true;
 
@@ -114,8 +113,8 @@ public class SCBallController : MonoBehaviour
     {
         if (rigid != null)
         {
-            rigid.velocity = SCGameManager.shotDirection * SCGameManager.shotDistance; // SCGameManager¿¡¼­ °ª °¡Á®¿Í¼­ ±¸Ã¼ ¹ß»ç
-            hasBeenReleased = true; // ÃÖÃÊ Å¬¸¯ÀÌ µÇ¾úÀ½À» Ç¥½Ã
+            rigid.velocity = SCGameManager.shotDirection * SCGameManager.shotDistance; // SCGameManagerï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ ï¿½ï¿½Ã¼ ï¿½ß»ï¿½
+            hasBeenReleased = true; // ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
         }
     }
 }

@@ -49,6 +49,12 @@ public class Ch2Story : MonoBehaviour
             case 33:
                 textManager.GiveMeTextId(7);
                 break;
+            case 45:
+                textManager.GiveMeTextId(8);
+                break;
+            case 54:
+                textManager.GiveMeTextId(9);
+                break;
         }
     }
 
