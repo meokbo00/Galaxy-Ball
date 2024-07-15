@@ -16,7 +16,14 @@ public class SCBallController : MonoBehaviour
     private int randomNumber;
     private TextMeshPro textMesh;
     private bool hasBeenReleased = false; // ���� Ŭ���� �Ǿ����� ���θ� ����
+<<<<<<< HEAD
     BGMControl bgmControl;
+=======
+
+    public AudioSource HitSound;
+    public AudioSource SwellSound;
+
+>>>>>>> 66107e7c5051d6809068ecbc4f80d2d02065d6d1
 
     private void Start()
     {
