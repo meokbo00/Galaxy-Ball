@@ -736,6 +736,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1441657822
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,6 +880,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM:
   - {fileID: 1441657824}
+=======
+>>>>>>> 89170a160939e0cdecdac0f1537dc9821b96b29c
 --- !u!1 &1644708145
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,4 +958,7 @@ SceneRoots:
   - {fileID: 214467911}
   - {fileID: 1644708148}
   - {fileID: 1152363546}
+<<<<<<< HEAD
   - {fileID: 1441657823}
+=======
+>>>>>>> 89170a160939e0cdecdac0f1537dc9821b96b29c
