@@ -479,7 +479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &173325674
 Transform:
   m_ObjectHideFlags: 0
@@ -3889,7 +3889,6 @@ MonoBehaviour:
   - {fileID: 3647509544521638733, guid: f80ccb5cf44b11e4eac34398462b41cb, type: 3}
   - {fileID: 3647509544521638733, guid: 25da00ac9fc715946960540a80daa55e, type: 3}
   - {fileID: 5058516911821304336, guid: 14f3f1560de3ad243b782004769b79df, type: 3}
-<<<<<<< HEAD
   fullItemAudio: {fileID: 2100130866}
 --- !u!82 &2100130866
 AudioSource:
@@ -3987,9 +3986,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-=======
-  fullItemAudio: {fileID: 0}
->>>>>>> 89170a160939e0cdecdac0f1537dc9821b96b29c
 --- !u!1 &2115579542
 GameObject:
   m_ObjectHideFlags: 0
@@ -4001,11 +3997,8 @@ GameObject:
   - component: {fileID: 2115579545}
   - component: {fileID: 2115579544}
   - component: {fileID: 2115579543}
-<<<<<<< HEAD
   - component: {fileID: 2115579547}
   - component: {fileID: 2115579546}
-=======
->>>>>>> 89170a160939e0cdecdac0f1537dc9821b96b29c
   m_Layer: 0
   m_Name: IsPlayBGM
   m_TagString: Untagged
@@ -4024,11 +4017,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 452972a44c7f8e943888652b3e55d745, type: 3}
-<<<<<<< HEAD
   m_PlayOnAwake: 0
-=======
-  m_PlayOnAwake: 1
->>>>>>> 89170a160939e0cdecdac0f1537dc9821b96b29c
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -4125,14 +4114,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a647a97bc9fd3714dbbf0f0be10d8e73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   BGM:
   - {fileID: 2115579543}
   - {fileID: 2115579547}
   - {fileID: 2115579546}
-=======
-  BGM: {fileID: 2115579543}
->>>>>>> 89170a160939e0cdecdac0f1537dc9821b96b29c
 --- !u!4 &2115579545
 Transform:
   m_ObjectHideFlags: 0
@@ -4148,7 +4133,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
 --- !u!82 &2115579546
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4341,8 +4325,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-=======
->>>>>>> 89170a160939e0cdecdac0f1537dc9821b96b29c
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

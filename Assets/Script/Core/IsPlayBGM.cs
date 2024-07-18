@@ -4,26 +4,17 @@ using UnityEngine;
 
 public class IsPlayBGM : MonoBehaviour
 {
-<<<<<<< HEAD
     public AudioSource[] BGM; // 오디오 소스를 배열로 변경
-=======
-    public AudioSource BGM;
->>>>>>> 89170a160939e0cdecdac0f1537dc9821b96b29c
     private BGMControl bGMControl;
 
     void Start()
     {
-<<<<<<< HEAD
-=======
-        // BGMControl ��ü�� ã�� �Ҵ�
->>>>>>> 89170a160939e0cdecdac0f1537dc9821b96b29c
         bGMControl = FindObjectOfType<BGMControl>();
 
         if (bGMControl != null)
         {
             if (bGMControl.BGMSwitch)
             {
-<<<<<<< HEAD
                 // StageClearID 값에 따라 다른 오디오 소스를 재생
                 if (StageState.chooseStage == 25 || StageState.chooseStage == 45)
                 {
@@ -58,13 +49,6 @@ public class IsPlayBGM : MonoBehaviour
                         audioSource.Stop();
                     }
                 }
-=======
-                BGM.Play();
-            }
-            else
-            {
-                BGM.Stop();
->>>>>>> 89170a160939e0cdecdac0f1537dc9821b96b29c
             }
         }
         else
