@@ -358,7 +358,6 @@ MonoBehaviour:
   randomNumber: 0
   initialRandomNumber: 0
   textMesh: {fileID: 0}
-<<<<<<< HEAD
   bossfires:
   - {fileID: 2100637884296595765}
   isShowHP: 0
@@ -366,16 +365,6 @@ MonoBehaviour:
   MinHP: 20
   MaxFireTime: 2
   MinFireTime: 2
-=======
-  enemy1Fires:
-  - {fileID: 5104137312958579742}
-  isShowHP: 0
-  isHide: 0
-  MaxHP: 15
-  MinHP: 15
-  MaxFireTime: 3
-  MinFireTime: 3
->>>>>>> a6590dd4d40bbd7b8cd66127ea87fba3817d39bf
   MaxAngle: 60
   MinAngle: -60
   fontsize: 5
@@ -452,10 +441,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyBulletPrefabs:
   - {fileID: 1721920693946575469, guid: 0c33cd8b75ae0d748add1eee48bbda37, type: 3}
-<<<<<<< HEAD
   - {fileID: 1100004579995390317, guid: d43341adbe098c6489be717113a272cc, type: 3}
   MinPower: 5
-=======
-  MinPower: 4
->>>>>>> a6590dd4d40bbd7b8cd66127ea87fba3817d39bf
   MaxPower: 8
