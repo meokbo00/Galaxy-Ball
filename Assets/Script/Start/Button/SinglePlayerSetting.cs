@@ -38,7 +38,7 @@ public class SinglePlayerSetting : MonoBehaviour
         });
         this.ContinueBtn.onClick.AddListener(() =>
         {
-            if (stageGameManager.StageClearID <= 6)
+            if (stageGameManager.StageClearID <= 6.5f)
             {
                 StartCoroutine(FadeInAndLoadScene("Stage"));
             }
@@ -61,7 +61,7 @@ public class SinglePlayerSetting : MonoBehaviour
         });
         this.reallyYes.onClick.AddListener(() =>
         {
-            ResetStageClearIDAndLoadScene(stageGameManager, "Booting");
+            ResetStageClearIDAndLoadScene(stageGameManager, "Prologue");
         });
     }
 
