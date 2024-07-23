@@ -15,6 +15,7 @@ public class Ch1_2Story : MonoBehaviour
     public GameObject creation;
     RemainTime remainTime;
     public Image fadeImage;
+    public GameObject isplaybgm;
 
     void Start()
     {
@@ -29,7 +30,7 @@ public class Ch1_2Story : MonoBehaviour
         color.a = 1f;
         fadeImage.color = color;
 
-        if (stageGameManager.StageClearID == 6)
+        if (stageGameManager.StageClearID == 6f)
         {
             stageBallController.enabled = false;
             Fadeinout.SetActive(true);
@@ -60,12 +61,13 @@ public class Ch1_2Story : MonoBehaviour
     {
         showText = FindObjectOfType<ShowText>();
 
-        if (showText != null && stageGameManager.StageClearID == 6)
+        if (showText != null && stageGameManager.StageClearID == 6f)
         {
             if (showText.logTextIndex > 38)
             {
                 stageBallController.enabled = true;
                 Fadeinout.SetActive(false);
+                isplaybgm.SetActive(false);
             }
             if (showText.logTextIndex == 48)
             {
@@ -73,7 +75,6 @@ public class Ch1_2Story : MonoBehaviour
             }
         }
     }
-
     IEnumerator FadeIn()
     {
         Fadeinout.SetActive(true);

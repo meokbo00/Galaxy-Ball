@@ -1,13 +1,15 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
 
 public class CameraReduction : MonoBehaviour
 {
+
     private Camera mainCamera;
     private int currentIndex = 0;
     private float[] sizes;
-    private string[] sizeTexts = { "100%", "75%", "50%", "15%"};
+    private string[] sizeTexts = { "100%", "75%", "50%", "15%", "1%"};
 
     public TextMeshProUGUI buttonText; 
 
@@ -24,11 +26,11 @@ public class CameraReduction : MonoBehaviour
         string currentSceneName = SceneManager.GetActiveScene().name;
         if (currentSceneName == "Stage")
         {
-            sizes = new float[] { 10f, 20f, 30f,50f };
+            sizes = new float[] { 10f, 20f, 30f,50f, 60f};
         }
         else if (currentSceneName == "Main Stage")
         {
-            sizes = new float[] { 4f, 7f, 15f,30f };
+            sizes = new float[] { 4f, 7f, 15f,30f, 45f };
         }
         UpdateButtonText(); // 초기 텍스트 업데이트
     }

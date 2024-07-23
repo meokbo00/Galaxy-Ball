@@ -33,12 +33,16 @@ public class SinglePlayerSetting : MonoBehaviour
             }
             else
             {
-                ResetStageClearIDAndLoadScene(stageGameManager, "Booting");
+                ResetStageClearIDAndLoadScene(stageGameManager, "Prologue");
             }
         });
         this.ContinueBtn.onClick.AddListener(() =>
         {
-            if (stageGameManager.StageClearID <= 6.5f)
+            if(stageGameManager.StageClearID == 1)
+            {
+                return;
+            }
+            else if (stageGameManager.StageClearID <= 6.5f && stageGameManager.StageClearID >= 2)
             {
                 StartCoroutine(FadeInAndLoadScene("Stage"));
             }
@@ -61,7 +65,7 @@ public class SinglePlayerSetting : MonoBehaviour
         });
         this.reallyYes.onClick.AddListener(() =>
         {
-            ResetStageClearIDAndLoadScene(stageGameManager, "Booting");
+            ResetStageClearIDAndLoadScene(stageGameManager, "Prologue");
         });
     }
 
@@ -69,6 +73,10 @@ public class SinglePlayerSetting : MonoBehaviour
     {
         stageGameManager.StageClearID = 1;
         stageGameManager.isending = false;
+        PlayerPrefs.SetFloat("StageClearID", stageGameManager.StageClearID);
+        PlayerPrefs.SetInt("isending", stageGameManager.isending ? 1 : 0);
+        stageGameManager.SaveIsEnding();
+        stageGameManager.SaveStageClearID();
         StartCoroutine(FadeInAndLoadScene(sceneName));
     }
 
